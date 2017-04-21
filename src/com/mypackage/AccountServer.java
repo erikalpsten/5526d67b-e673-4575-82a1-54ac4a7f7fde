@@ -5,7 +5,7 @@ import java.util.List;
 import java.math.BigDecimal;
 
 public class AccountServer { 
-   public List<Account> getAllAccounts(){ 
+   public static List<Account> getAllAccounts(){ 
       
       List<Account> userList = new ArrayList<Account>(); 
       Account acc1 = new Account("12345", new BigDecimal(10), "USD", true, new ArrayList<String>(){{add("bob"); add("mr test");}}, new ArrayList<Asset>(){{add(new Asset("test1", new BigDecimal(100))); add(new Asset("test4", new BigDecimal(10.2)));}} );
@@ -16,7 +16,7 @@ public class AccountServer {
       return userList; 
    }
    
-   public Account getAccount(String accountID){
+   public static Account getAccount(String accountID){
 	   List<Account> accounts = getAllAccounts();
 	   for(Account acc : accounts){
 		   if (acc.getAccountID().equals(accountID)){

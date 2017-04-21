@@ -8,9 +8,10 @@ import java.net.URL;
 
 public class clientAccountDisplay {
 	
-	private static void sendGet(String ip, String port, String accountID) throws Exception{
+	private static void sendGet() throws Exception{
 		
-		String urlString = "http://" + ip + ":" + port + "/UserManagement/rest/AccountService/accounts/" + accountID;
+		//String urlString = "http://" + ip + ":" + port + "/UserManagement/rest/AccountService/accounts/" + accountID;
+		String urlString = "http://localhost:8080/UserManagement/rest/AccountService/accounts/11111";
 		URL url = new URL(urlString);
 		
 		HttpURLConnection con = (HttpURLConnection) url.openConnection();
@@ -34,7 +35,7 @@ public class clientAccountDisplay {
 	
 	public static void main(String[] args) {
 		try{
-			sendGet(args[1], args[3], args[5]);
+			sendGet();
 		}catch(Exception e){
 			System.out.println(e.getMessage());
 		}
